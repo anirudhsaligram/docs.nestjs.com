@@ -576,6 +576,8 @@ export class AppModule {}
 
 > warning **Notice** If you don't set the `name` for a connection, its name is set to `default`. Please note that you shouldn't have multiple connections without a name, or with the same name, otherwise they will get overridden.
 
+> info **Hint** When using multiple database connections with [async-configuration](https://docs.nestjs.com/techniques/database#async-configuration), you have to specify the `name` at the root level of the options parameter.
+
 At this point, you have `User` and `Album` entities registered with their own connection. With this setup, you have to tell the `TypeOrmModule.forFeature()` method and the `@InjectRepository()` decorator which connection should be used. If you do not pass any connection name, the `default` connection is used.
 
 ```typescript
